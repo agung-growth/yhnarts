@@ -36,6 +36,10 @@
         }
 
         /* Navbar Custom */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
         .navbar-brand {
             font-weight: 800;
             font-size: 1.6rem;
@@ -46,7 +50,7 @@
             font-size: 0.9rem;
             font-weight: 600;
             color: var(--muted) !important;
-            padding: 0.5rem 1.2rem !important;
+            padding: 0.8rem 1.2rem !important;
             transition: color 0.3s ease;
         }
         .nav-link:hover, .nav-link.active {
@@ -55,7 +59,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 160px 0 100px 0;
+            padding: 140px 0 80px 0;
             background: linear-gradient(135deg, var(--white) 0%, var(--maroon-light) 100%);
             position: relative;
         }
@@ -68,6 +72,19 @@
             padding: 6px 16px;
             border-radius: 50px;
             display: inline-block;
+        }
+        .hero-img-box {
+            width: 100%;
+            height: 380px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(128, 0, 32, 0.1);
+        }
+        .hero-img-box img {
+            width: 100%;
+            height: 100%;
+            object-cover: cover;
+            object-position: center;
         }
 
         /* Buttons */
@@ -105,10 +122,10 @@
 
         /* Sections */
         .section-padding {
-            padding: 100px 0;
+            padding: 80px 0;
         }
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--dark);
             position: relative;
@@ -116,9 +133,9 @@
         }
         .section-subtitle {
             color: var(--muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
             max-w: 600px;
-            margin: 0 auto 60px auto;
+            margin: 0 auto 50px auto;
             font-weight: 500;
         }
 
@@ -139,20 +156,14 @@
         .card-placeholder {
             background-color: var(--light-bg);
             height: 260px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--muted);
-            font-weight: 600;
-            font-size: 1.1rem;
             position: relative;
             overflow: hidden;
         }
-        .card-placeholder i {
-            font-size: 2.5rem;
-            opacity: 0.4;
-            margin-bottom: 10px;
-            color: var(--maroon);
+        .card-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
         .card-badge {
             position: absolute;
@@ -165,26 +176,26 @@
             font-size: 0.75rem;
             font-weight: 700;
             box-shadow: 0 4px 10px rgba(128, 0, 32, 0.2);
+            z-index: 2;
         }
 
         /* Gallery Grid */
         .gallery-placeholder {
             background-color: var(--light-bg);
             aspect-ratio: 3/2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--muted);
-            font-weight: 600;
             border-radius: 20px;
+            overflow: hidden;
             transition: all 0.3s ease;
             border: 1px solid rgba(0,0,0,0.04);
         }
-        .gallery-placeholder:hover {
-            background-color: var(--maroon-light);
-            color: var(--maroon);
-            border-color: rgba(128, 0, 32, 0.2);
-            cursor: pointer;
+        .gallery-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-placeholder:hover img {
+            transform: scale(1.08);
         }
 
         /* Testimonials */
@@ -209,39 +220,28 @@
         .footer {
             background-color: var(--dark);
             color: #f8f9fa;
-            padding: 80px 0 30px 0;
+            padding: 60px 0 30px 0;
         }
         .footer h3 {
             color: var(--white);
             font-weight: 800;
             margin-bottom: 20px;
         }
-        .footer-link {
-            color: #ced4da;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: inline-block;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-        .footer-link:hover {
-            color: var(--white);
-        }
 
         /* Floating WhatsApp Button */
         .whatsapp {
             position: fixed;
-            right: 30px;
-            bottom: 30px;
+            right: 25px;
+            bottom: 25px;
             background: #25D366;
             color: var(--white);
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 26px;
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
             transition: all 0.3s ease;
             z-index: 1000;
@@ -255,20 +255,20 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top bg-white bg-opacity-75 backdrop-blur py-3 border-bottom">
+    <nav class="navbar navbar-expand-lg fixed-top py-3 border-bottom">
         <div class="container">
             <a class="navbar-brand" href="#">YHNarts</a>
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-dark fs-4"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
-                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                        <a href="https://wa.me/6289502072043" target="_blank" class="btn-brand px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider font-bold">
+                    <li class="nav-item w-100 text-center text-lg-start"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item w-100 text-center text-lg-start"><a class="nav-link" href="#produk">Produk</a></li>
+                    <li class="nav-item w-100 text-center text-lg-start"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item w-100 text-center text-lg-start"><a class="nav-link" href="#testimoni">Testimoni</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0 w-100 text-center">
+                        <a href="https://wa.me/6289502072043" target="_blank" class="btn-brand d-inline-block px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider font-bold">
                             <i class="fab fa-whatsapp me-2"></i>Konsultasi
                         </a>
                     </li>
@@ -280,20 +280,18 @@
     <section class="hero d-flex align-items-center">
         <div class="container">
             <div class="row align-items-center g-5">
-                <div class="col-lg-6">
+                <div class="col-lg-6 text-center text-lg-start">
                     <div class="hero-badge mb-3"><i class="fas fa-sparkles me-2"></i>100% HANDMADE CRAFT</div>
                     <h1 class="display-5 fw-extrabold text-dark mb-3">Hadiah Istimewa untuk Momen Tak Terlupakan</h1>
                     <p class="lead text-muted mb-4 fs-6">Ekspresikan kasih sayang dan apresiasi Anda melalui kreasi bouquet dan craft kustom berkualitas tinggi yang dirancang khusus penuh kehangatan.</p>
-                    <div class="d-flex gap-3 flex-wrap">
+                    <div class="d-flex gap-3 flex-wrap justify-content-center justify-content-lg-start">
                         <a href="#produk" class="btn-brand">Lihat Koleksi</a>
                         <a href="https://wa.me/6289502072043" target="_blank" class="btn-outline-brand">Pesan Custom</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="p-5 bg-white bg-opacity-50 rounded-4 shadow-sm text-center border" style="border-style: dashed !important; border-color: var(--maroon) !important;">
-                        <i class="fas fa-gift display-1 text-muted mb-3 opacity-20" style="color: var(--maroon) !important;"></i>
-                        <h4 class="fw-bold">Katalog Visual Segera Hadir</h4>
-                        <p class="text-muted small px-4 mb-0">Kami sedang menyiapkan dokumentasi portfolio produk terbaik kami untuk memanjakan mata Anda.</p>
+                    <div class="hero-img-box">
+                        <img src="https://i.pinimg.com/736xl/0d/95/67/0d956743126f9fe3160a263f354fcfc2.jpg" alt="YHNarts Ilustrasi Kerajinan Bunga">
                     </div>
                 </div>
             </div>
@@ -312,16 +310,13 @@
                     <div class="custom-card h-100 p-3">
                         <div class="card-placeholder rounded-4">
                             <span class="card-badge">Best Seller</span>
-                            <div class="text-center">
-                                <i class="fas fa-wand-magic-sparkles d-block"></i>
-                                Bouquet Wisuda
-                            </div>
+                            <img src="https://i.pinimg.com/564xl/4d/95/0e/4d950e4b85da81df7b0b232ef16e45ce.jpg" alt="Bouquet Wisuda">
                         </div>
                         <div class="card-body pt-4 px-2 pb-2">
                             <h5 class="fw-bold fs-6 mb-2">Premium Graduation Bouquet</h5>
                             <p class="card-text text-muted small mb-4">Kombinasi bunga artifisial indah dengan tambahan boneka wisuda flanel kustom.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-maroon">Custom Order</span>
+                                <span class="fw-bold text-maroon small">Custom Order</span>
                                 <a href="https://wa.me/6289502072043?text=Halo%20YHNarts,%20saya%20ingin%20tanya%20tentang%20Bouquet%20Wisuda" target="_blank" class="text-decoration-none small fw-bold text-dark hover:text-maroon">Pesan <i class="fas fa-arrow-right ms-1"></i></a>
                             </div>
                         </div>
@@ -331,16 +326,13 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="custom-card h-100 p-3">
                         <div class="card-placeholder rounded-4">
-                            <div class="text-center">
-                                <i class="fas fa-heart d-block"></i>
-                                Bouquet Pernikahan
-                            </div>
+                            <img src="https://i.pinimg.com/564xl/8b/44/22/8b442220478096f9f3f4c66579626df4.jpg" alt="Bouquet Pernikahan">
                         </div>
                         <div class="card-body pt-4 px-2 pb-2">
                             <h5 class="fw-bold fs-6 mb-2">Elegant Wedding Bouquet</h5>
                             <p class="card-text text-muted small mb-4">Rangkaian bunga tangan eksklusif untuk menyempurnakan hari bahagia pernikahan Anda.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-maroon">Custom Order</span>
+                                <span class="fw-bold text-maroon small">Custom Order</span>
                                 <a href="https://wa.me/6289502072043?text=Halo%20YHNarts,%20saya%20ingin%20tanya%20tentang%20Bouquet%20Pernikahan" target="_blank" class="text-decoration-none small fw-bold text-dark">Pesan <i class="fas fa-arrow-right ms-1"></i></a>
                             </div>
                         </div>
@@ -350,16 +342,13 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="custom-card h-100 p-3">
                         <div class="card-placeholder rounded-4">
-                            <div class="text-center">
-                                <i class="fas fa-smile d-block"></i>
-                                Boneka Flanel
-                            </div>
+                            <img src="https://i.pinimg.com/564xl/10/5f/f0/105ff0ef7946914db45388e404bf409c.jpg" alt="Boneka Flanel">
                         </div>
                         <div class="card-body pt-4 px-2 pb-2">
                             <h5 class="fw-bold fs-6 mb-2">Custom Flanel Doll</h5>
                             <p class="card-text text-muted small mb-4">Miniatur boneka lucu berbahan kain flanel premium yang dipersonalisasi sesuai keinginan.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-maroon">Custom Order</span>
+                                <span class="fw-bold text-maroon small">Custom Order</span>
                                 <a href="https://wa.me/6289502072043?text=Halo%20YHNarts,%20saya%20ingin%20tanya%20tentang%20Boneka%20Flanel" target="_blank" class="text-decoration-none small fw-bold text-dark">Pesan <i class="fas fa-arrow-right ms-1"></i></a>
                             </div>
                         </div>
@@ -369,16 +358,13 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="custom-card h-100 p-3">
                         <div class="card-placeholder rounded-4">
-                            <div class="text-center">
-                                <i class="fas fa-key d-block"></i>
-                                Gantungan Kunci
-                            </div>
+                            <img src="https://i.pinimg.com/564xl/04/b5/45/04b545d625b525790a36bc6bc21b714b.jpg" alt="Gantungan Kunci">
                         </div>
                         <div class="card-body pt-4 px-2 pb-2">
                             <h5 class="fw-bold fs-6 mb-2">Handmade Keychains</h5>
                             <p class="card-text text-muted small mb-4">Aksesoris gantungan kunci rajut dan flanel unik untuk kado kasual yang berkesan.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-maroon">Custom Order</span>
+                                <span class="fw-bold text-maroon small">Custom Order</span>
                                 <a href="https://wa.me/6289502072043?text=Halo%20YHNarts,%20saya%20ingin%20tanya%20tentang%20Gantungan%20Kunci" target="_blank" class="text-decoration-none small fw-bold text-dark">Pesan <i class="fas fa-arrow-right ms-1"></i></a>
                             </div>
                         </div>
@@ -396,12 +382,36 @@
             </div>
             
             <div class="row g-4">
-                <div class="col-sm-6 col-md-4"><div class="gallery-placeholder">Foto Produk 1</div></div>
-                <div class="col-sm-6 col-md-4"><div class="gallery-placeholder">Foto Produk 2</div></div>
-                <div class="col-sm-6 col-md-4"><div class="gallery-placeholder">Foto Produk 3</div></div>
-                <div class="col-sm-6 col-md-4"><div class="gallery-placeholder">Foto Produk 4</div></div>
-                <div class="col-sm-6 col-md-4"><div class="gallery-placeholder">Foto Produk 5</div></div>
-                <div class="col-sm-6 col-md-4"><div class="gallery-placeholder">Foto Produk 6</div></div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="gallery-placeholder">
+                        <img src="https://i.pinimg.com/564xl/b4/0b/df/b40bdfd20428fa6fa58dfc99e120da3f.jpg" alt="Portfolio 1">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="gallery-placeholder">
+                        <img src="https://i.pinimg.com/564xl/ee/75/a9/ee75a9e3ee3fb4a7e94db92df0bf7fe5.jpg" alt="Portfolio 2">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="gallery-placeholder">
+                        <img src="https://i.pinimg.com/564xl/17/5c/aa/175caad73f08ca6fa69f83f2cb5c6ba4.jpg" alt="Portfolio 3">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="gallery-placeholder">
+                        <img src="https://i.pinimg.com/564xl/43/da/0c/43da0c2a829280d29622d1033bfa8bc6.jpg" alt="Portfolio 4">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="gallery-placeholder">
+                        <img src="https://i.pinimg.com/564xl/df/e5/a8/dfe5a89fb980f760da6b9c9f0003cb83.jpg" alt="Portfolio 5">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="gallery-placeholder">
+                        <img src="https://i.pinimg.com/564xl/72/74/41/727441fcbe47e8b6bbfda7458145e62b.jpg" alt="Portfolio 6">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -447,26 +457,17 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="row g-5 mb-5">
-                <div class="col-md-5">
+            <div class="row g-5 mb-4">
+                <div class="col-md-6 text-center text-md-start">
                     <h3 class="mb-3">YHNarts</h3>
-                    <p class="text-secondary small leading-relaxed" style="max-w: 320px;">Kami percaya bahwa setiap hadiah istimewa membawa sejuta cerita dan kebahagiaan yang membekas selamanya di hati penerima.</p>
+                    <p class="text-secondary small leading-relaxed mb-0" style="max-width: 380px;">Kami percaya bahwa setiap hadiah istimewa membawa sejuta cerita dan kebahagiaan yang membekas selamanya di hati penerima.</p>
                 </div>
-                <div class="col-md-3">
-                    <h6 class="text-uppercase tracking-wider fw-bold text-white small mb-3">Navigasi</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="footer-link">Beranda</a></li>
-                        <li><a href="#produk" class="footer-link">Koleksi Produk</a></li>
-                        <li><a href="#galeri" class="footer-link">Studio Portfolio</a></li>
-                        <li><a href="#testimoni" class="footer-link">Testimoni</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-6 text-center text-md-end">
                     <h6 class="text-uppercase tracking-wider fw-bold text-white small mb-3">Hubungi Kami</h6>
                     <p class="text-secondary small mb-2"><i class="fab fa-whatsapp text-white me-2"></i> 0895-0207-2043</p>
-                    <p class="text-secondary small mb-3"><i class="fab fa-instagram text-white me-2"></i> @yhnarts</p>
-                    <div class="pt-2">
-                        <a href="https://wa.me/6289502072043" class="btn-brand py-2 px-4 text-xs rounded-xl">Hubungi Via WhatsApp</a>
+                    <p class="text-secondary small mb-4"><i class="fab fa-instagram text-white me-2"></i> @yhnarts</p>
+                    <div>
+                        <a href="https://wa.me/6289502072043" class="btn-brand py-2 px-4 text-xs rounded-xl d-inline-block">Hubungi Via WhatsApp</a>
                     </div>
                 </div>
             </div>
